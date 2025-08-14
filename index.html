@@ -1,60 +1,131 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Helika's Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Helika Senarathne — Portfolio</title>
+  <meta name="description" content="Portfolio of Senarath Mudalige Helika Sadupama Senarathne (Helika). Projects, skills, and contact." />
+  <meta property="og:title" content="Helika Senarathne — Portfolio" />
+  <meta property="og:description" content="Modern, fast, and accessible personal website." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.ico" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #0b0c10;
-      color: #e4e6eb;
-      text-align: center;
+    :root{
+      --bg:#0b0c10; --fg:#e4e6eb; --muted:#aab0b6; --card:#14161a; --border:#22262b;
+      --accent:#7c5cff; --link:#9aa8ff; --maxw:1000px;
     }
-    header {
-      padding: 20px;
-      background: #14161a;
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#ffffff; --fg:#101216; --muted:#5b6168; --card:#f6f7f9; --border:#e6e8eb; --accent:#5b42ff; --link:#3b57ff; }
     }
-    h1 {
-      margin: 0;
-    }
-    section {
-      padding: 40px 20px;
-    }
-    a {
-      color: #7c5cff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+    *{ box-sizing:border-box }
+    body{ margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--fg); background:var(--bg) }
+    .wrap{ max-width:var(--maxw); margin:0 auto; padding:28px 20px 72px }
+    header{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:8px 0 16px }
+    .brand{ font-weight:700; letter-spacing:.2px }
+    nav a{ color:var(--muted); text-decoration:none; margin-left:16px }
+    nav a:hover{ color:var(--fg) }
+    .theme-toggle{ border:1px solid var(--border); background:transparent; color:var(--muted); padding:8px 10px; border-radius:10px; cursor:pointer }
+    .hero{ display:grid; grid-template-columns:1fr; gap:24px; padding:28px 0 }
+    @media (min-width:860px){ .hero{ grid-template-columns:1.2fr .8fr; align-items:center } }
+    .pill{ display:inline-block; padding:6px 10px; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:14px }
+    h1{ font-size:42px; line-height:1.15; margin:12px 0 10px }
+    p.lead{ color:var(--muted); margin:0 0 18px; font-size:18px }
+    .btn{ display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); padding:10px 14px; border-radius:12px; text-decoration:none; color:var(--fg) }
+    .btn:hover{ border-color:var(--fg) }
+    .card{ background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px }
+    .grid{ display:grid; gap:16px }
+    @media (min-width:720px){ .grid{ grid-template-columns:repeat(3,1fr) } }
+    .project h3{ margin:0 0 6px; font-size:18px }
+    .project p{ margin:0; color:var(--muted); font-size:14px }
+    .stack{ display:flex; gap:10px; flex-wrap:wrap; margin-top:8px }
+    .chip{ border:1px solid var(--border); border-radius:999px; padding:6px 10px; font-size:13px; color:var(--muted) }
+    a{ color:var(--link) }
+    footer{ color:var(--muted); padding-top:44px; font-size:14px }
+    .avatar{ width:140px; height:140px; border-radius:16px; object-fit:cover; border:1px solid var(--border) }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Senarath Mudalige Helika Sadupama Senarathne</h1>
-    <p>Welcome to my portfolio website!</p>
-  </header>
-  
-  <section>
-    <h2>About Me</h2>
-    <p>Hello! I’m Helika. This is my personal website where I’ll share my projects, skills, and experience.</p>
-  </section>
-  
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>Project One – <a href="#">View</a></li>
-      <li>Project Two – <a href="#">View</a></li>
-      <li>Project Three – <a href="#">View</a></li>
-    </ul>
-  </section>
-  
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-  </section>
+  <div class="wrap">
+    <header>
+      <div class="brand">Helika Senarathne</div>
+      <nav aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">☾/☼</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="pill">ROLE — LOCATION</span>
+        <h1>I build modern, fast websites & apps.</h1>
+        <p class="lead">Short value prop (who you help + outcome). Example: “Frontend developer helping small businesses launch clean, accessible sites that convert.”</p>
+        <div class="stack">
+          <span class="chip">HTML/CSS/JS</span><span class="chip">React</span><span class="chip">Node</span><span class="chip">UI/UX</span>
+        </div>
+        <p style="margin-top:18px">
+          <a class="btn" href="mailto:YOUR_EMAIL@EXAMPLE.COM">Email me</a>
+          <a class="btn" href="https://linkedin.com/in/YOURHANDLE" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="HELIKA_RESUME.pdf" target="_blank" rel="noopener">Résumé</a>
+        </p>
+      </div>
+      <div class="card" aria-label="Profile photo">
+        <img class="avatar" src="avatar.jpg" alt="Portrait of Senarath Mudalige Helika Sadupama Senarathne" />
+        <p class="lead" style="margin-top:10px">Available for freelance / internships.</p>
+      </div>
+    </section>
+
+    <section id="projects" style="margin-top:28px">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <article class="card project">
+          <h3><a href="https://github.com/ItzMeSadu" target="_blank" rel="noopener">Project One →</a></h3>
+          <p>What it is + measurable result. E.g., “Redesigned onboarding; increased activation by 22%.”</p>
+          <p class="stack"><span class="chip">Tech</span><span class="chip">Tech</span></p>
+        </article>
+        <article class="card project">
+          <h3><a href="#" target="_blank" rel="noopener">Project Two →</a></h3>
+          <p>One-line summary with impact.</p>
+          <p class="stack"><span class="chip">Tech</span><span class="chip">Tech</span></p>
+        </article>
+        <article class="card project">
+          <h3><a href="#" target="_blank" rel="noopener">Project Three →</a></h3>
+          <p>One-line summary with result.</p>
+          <p class="stack"><span class="chip">Tech</span><span class="chip">Tech</span></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top:28px">
+      <h2>About</h2>
+      <div class="card">
+        <p>Hi, I’m <strong>Senarath Mudalige Helika Sadupama Senarathne</strong> — but most people call me <strong>Helika</strong>. Add 3–5 sentences about your focus, strengths, tools you enjoy, and what you’re looking for.</p>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:28px">
+      <h2>Contact</h2>
+      <div class="card">
+        <p><a href="mailto:YOUR_EMAIL@EXAMPLE.COM">YOUR_EMAIL@EXAMPLE.COM</a> ·
+           <a href="https://github.com/ItzMeSadu" target="_blank" rel="noopener">GitHub</a> ·
+           <a href="https://linkedin.com/in/YOURHANDLE" target="_blank" rel="noopener">LinkedIn</a></p>
+      </div>
+    </section>
+
+    <footer>© <span id="year"></span> Helika Senarathne. Built with plain HTML/CSS.</footer>
+  </div>
+
+  <script>
+    // dynamic year + theme toggle with persistence
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const key='theme', setTheme=t=>document.documentElement.dataset.theme=t;
+    const saved=localStorage.getItem(key); if(saved) setTheme(saved);
+    document.getElementById('themeToggle').addEventListener('click',()=>{
+      const next=document.documentElement.dataset.theme==='light'?'dark':'light';
+      setTheme(next); localStorage.setItem(key,next);
+    });
+    if(!saved){ setTheme(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'); }
+  </script>
 </body>
 </html>
