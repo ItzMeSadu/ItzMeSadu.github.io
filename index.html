@@ -26,6 +26,134 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <style id="mobile-hotfix">
+/* ===== DEBUG: remove this later ===== */
+body::after{
+  content:"hotfix loaded";
+  position:fixed; bottom:6px; left:6px;
+  font:11px/1.1 monospace; color:#0f0; background:#000;
+  padding:3px 6px; border-radius:4px; z-index:999999; opacity:.35;
+}
+
+/* 0) Make sure nothing forces the page smaller than the phone */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+}
+
+/* 1) Stop any element from pushing the viewport wider */
+img, video, canvas, svg, iframe { max-width: 100%; height: auto; display: block; }
+
+/* 2) Strong mobile overrides (Bootstrap + your template) */
+@media (max-width: 576px) {
+
+  /* Containers: always the phone width with comfy padding */
+  .container, .container-fluid, .container-sm, .container-md,
+  .container-lg, .container-xl, .container-xxl {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Rows/cols tighter gutters */
+  .row { margin-left: -8px !important; margin-right: -8px !important; }
+  [class*="col-"] { padding-left: 8px !important; padding-right: 8px !important; }
+
+  /* Hero: less tall, larger readable text */
+  .hero { min-height: 70vh !important; padding: 36px 0 !important; }
+  .hero h2 { font-size: 28px !important; line-height: 1.2 !important; }
+  .hero p  { font-size: 16px !important; line-height: 1.4 !important; }
+
+  /* About */
+  .about .container { padding: 18px !important; }
+  .about .about-me h4 { font-size: 22px !important; margin-bottom: 14px !important; }
+  .about .about-me p  { font-size: 15px !important; }
+  .about .skills-content h5 { margin: 14px 0 8px !important; }
+  .about-info p, .about-info strong, .about-info span { font-size: 14px !important; }
+
+  /* Resume */
+  .resume .resume-title { font-size: 20px !important; margin: 12px 0 !important; }
+  .resume .resume-item   { padding-left: 14px !important; }
+  .resume .resume-item h4 { font-size: 14px !important; }
+  .resume .resume-item h5 { font-size: 13px !important; padding: 3px 8px !important; }
+
+  /* Services cards */
+  .services .service-item { padding: 24px 16px !important; border-radius: 14px !important; }
+  .services .service-item h3 { font-size: 18px !important; }
+  .services .service-item p  { font-size: 14px !important; }
+
+  /* Portfolio: force a 2-column grid */
+  .portfolio .isotope-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+  .portfolio .isotope-container > * {
+    width: auto !important;
+    padding: 0 !important;
+  }
+  .portfolio .portfolio-item .portfolio-info {
+    left: 8px !important; right: 8px !important; padding: 10px !important;
+  }
+  .portfolio .portfolio-filters li { font-size: 12px !important; margin: 0 6px !important; }
+
+  /* FAQ */
+  .faq .content h3 { font-size: 24px !important; }
+  .faq .faq-container .faq-item { padding: 14px !important; }
+  .faq .faq-container .faq-item h3 { font-size: 16px !important; }
+
+  /* Testimonials */
+  .testimonials { padding: 48px 0 !important; }
+  .testimonials .testimonial-item { padding: 20px !important; }
+  .testimonials .testimonial-item h3 { font-size: 16px !important; }
+  .testimonials .testimonial-item h4 { font-size: 12px !important; }
+  .testimonials .testimonial-item p  { font-size: 14px !important; }
+
+  /* Contact (your landing form) */
+  .landing_page .form-box { padding: 22px !important; border-radius: 14px !important; }
+  .landing_page .section-head { font-size: 26px !important; }
+  .landing_page .section-subhead { font-size: 15px !important; }
+  .landing_page .input, .landing_page .textinput { font-size: 15px !important; }
+
+  /* Footer text scale */
+  #footer .copyright p, #footer .credits { font-size: 12px !important; }
+}
+
+/* 3) Dark site background without hiding cards */
+:root {
+  --site-bg-from: #0b1220;
+  --site-bg-to:   #121826;
+}
+html, body {
+  background: linear-gradient(180deg, var(--site-bg-from), var(--site-bg-to)) fixed !important;
+}
+
+/* Keep the sections readable (your cards use --surface-color) */
+section .container, .section .container {
+  background: var(--surface-color);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+/* Don’t card-ify these (they have their own background) */
+.hero .container,
+.testimonials .container,
+.landing_page .responsive-container-block.container {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* 4) Just in case something tried to scale the whole page */
+body, main, .main { transform: none !important; zoom: 1 !important; }
+</style>
+
 
   <!-- Section Background Enhancements (no extra files required) -->
   <style>
