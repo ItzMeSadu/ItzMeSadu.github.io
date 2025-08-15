@@ -1172,3 +1172,297 @@ a:hover { color: #93c5fd; }
 .footer-bottom strong {
   color: #fff;
 }
+
+------------------------------
+/* === MOBILE HOTFIX LAYER (put at end of main.css) ===================== */
+
+/* 1) Reset any accidental shrinking on mobile */
+html, body {
+  font-size: 16px;                   /* readable base */
+  -webkit-text-size-adjust: 100%;    /* prevent iOS auto-zooming text */
+}
+
+/* 2) Make sure no element forces the page to zoom out */
+img, video, canvas, svg, iframe {
+  max-width: 100%;
+  height: auto;
+}
+.container, .container-fluid {
+  width: 100%;
+}
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* 3) Kill sneaky horizontal scroll on small screens */
+html, body {
+  overflow-x: hidden;
+}
+section, .section {
+  overflow-x: clip; /* keep your existing clip but explicitly for x */
+}
+
+/* 4) Tighter vertical rhythm on phones */
+@media (max-width: 576px) {
+  section, .section { padding: 36px 0; }
+
+  /* Header */
+  .header { padding: 14px 0; }
+  .header .logo h1 { font-size: 22px; }
+
+  /* Hero */
+  .hero {
+    min-height: 70vh;              /* less height so content isn’t “tiny” */
+    padding: 36px 0;
+  }
+  .hero h2 { font-size: 28px; line-height: 1.2; }
+  .hero p  { font-size: 16px; line-height: 1.4; }
+
+  /* About */
+  .about .container { padding: 18px; }
+  .about .about-me h4 { font-size: 22px; margin-bottom: 18px; }
+  .about .about-me p  { font-size: 16px; }
+  .about .skills-content h5 { margin: 18px 0 10px; }
+  .about .progress { margin-top: 8px; }
+  .about .progress .skill { font-size: 12px; }
+  .about-info p, .about-info strong, .about-info span {
+    font-size: 14px !important;
+  }
+
+  /* Resume */
+  .resume .resume-title { font-size: 20px; margin: 12px 0; }
+  .resume .resume-item { padding-left: 16px; }
+  .resume .resume-item h4 { font-size: 14px; }
+  .resume .resume-item h5 { font-size: 13px; padding: 4px 10px; }
+
+  /* Services */
+  .services .service-item { padding: 28px 18px; border-radius: 14px; }
+  .services .service-item h3 { font-size: 18px; }
+  .services .service-item p  { font-size: 14px; }
+
+  /* Portfolio grid: two columns on phones */
+  .portfolio .isotope-container .col-lg-4,
+  .portfolio .isotope-container .col-md-6 {
+    width: 50%;
+    padding: 8px;
+  }
+  .portfolio .portfolio-item .portfolio-info {
+    left: 12px; right: 12px; padding: 10px;
+  }
+  .portfolio .portfolio-filters li { font-size: 12px; margin: 0 6px; }
+
+  /* FAQ */
+  .faq .content h3 { font-size: 24px; }
+  .faq .faq-container .faq-item { padding: 16px; }
+  .faq .faq-container .faq-item h3 { font-size: 16px; }
+
+  /* Testimonials */
+  .testimonials { padding: 48px 0; }
+  .testimonials .testimonial-item { padding: 20px; }
+  .testimonials .testimonial-item h3 { font-size: 16px; }
+  .testimonials .testimonial-item h4 { font-size: 12px; }
+  .testimonials .testimonial-item p  { font-size: 14px; }
+
+  /* Contact (landing_page form) */
+  .landing_page .content-box { padding: 10px 0; }
+  .landing_page .section-head { font-size: 26px; }
+  .landing_page .section-subhead { font-size: 15px; }
+  .landing_page .form-box { padding: 22px; border-radius: 14px; }
+  .landing_page .input, .landing_page .textinput { font-size: 15px; }
+
+  /* Footer */
+  #footer .copyright p,
+  #footer .credits { font-size: 12px; }
+}
+
+/* 5) Medium devices (tablets): scale sensibly */
+@media (min-width: 577px) and (max-width: 991px) {
+  .hero { min-height: 72vh; }
+  .hero h2 { font-size: 40px; }
+  .hero p  { font-size: 22px; }
+
+  .portfolio .isotope-container .col-lg-4,
+  .portfolio .isotope-container .col-md-6 {
+    width: 33.3333%;
+    padding: 10px;
+  }
+}
+
+/* 6) Ensure no element sets a global transform/scale that shrinks the page */
+body, main, .main {
+  transform: none !important;
+  zoom: 1 !important;             /* guard against accidental zoom hacks */
+}
+
+/* 7) Dark gradient site background, but keep cards readable */
+:root {
+  --site-bg-from: #0b1220;
+  --site-bg-to:   #121826;
+}
+html, body {
+  background: linear-gradient(180deg, var(--site-bg-from), var(--site-bg-to));
+}
+section .container,
+.section .container {
+  background: var(--surface-color);        /* your cards/panels stay light/dark as defined */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+/* Reduce container styling for sections that already handle their own backgrounds (hero, testimonials, contact landing_page) */
+.hero .container,
+.testimonials .container,
+.landing_page .responsive-container-block.container {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+}
+/* === MOBILE HOTFIX LAYER (put at end of main.css) ===================== */
+
+/* 1) Reset any accidental shrinking on mobile */
+html, body {
+  font-size: 16px;                   /* readable base */
+  -webkit-text-size-adjust: 100%;    /* prevent iOS auto-zooming text */
+}
+
+/* 2) Make sure no element forces the page to zoom out */
+img, video, canvas, svg, iframe {
+  max-width: 100%;
+  height: auto;
+}
+.container, .container-fluid {
+  width: 100%;
+}
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+/* 3) Kill sneaky horizontal scroll on small screens */
+html, body {
+  overflow-x: hidden;
+}
+section, .section {
+  overflow-x: clip; /* keep your existing clip but explicitly for x */
+}
+
+/* 4) Tighter vertical rhythm on phones */
+@media (max-width: 576px) {
+  section, .section { padding: 36px 0; }
+
+  /* Header */
+  .header { padding: 14px 0; }
+  .header .logo h1 { font-size: 22px; }
+
+  /* Hero */
+  .hero {
+    min-height: 70vh;              /* less height so content isn’t “tiny” */
+    padding: 36px 0;
+  }
+  .hero h2 { font-size: 28px; line-height: 1.2; }
+  .hero p  { font-size: 16px; line-height: 1.4; }
+
+  /* About */
+  .about .container { padding: 18px; }
+  .about .about-me h4 { font-size: 22px; margin-bottom: 18px; }
+  .about .about-me p  { font-size: 16px; }
+  .about .skills-content h5 { margin: 18px 0 10px; }
+  .about .progress { margin-top: 8px; }
+  .about .progress .skill { font-size: 12px; }
+  .about-info p, .about-info strong, .about-info span {
+    font-size: 14px !important;
+  }
+
+  /* Resume */
+  .resume .resume-title { font-size: 20px; margin: 12px 0; }
+  .resume .resume-item { padding-left: 16px; }
+  .resume .resume-item h4 { font-size: 14px; }
+  .resume .resume-item h5 { font-size: 13px; padding: 4px 10px; }
+
+  /* Services */
+  .services .service-item { padding: 28px 18px; border-radius: 14px; }
+  .services .service-item h3 { font-size: 18px; }
+  .services .service-item p  { font-size: 14px; }
+
+  /* Portfolio grid: two columns on phones */
+  .portfolio .isotope-container .col-lg-4,
+  .portfolio .isotope-container .col-md-6 {
+    width: 50%;
+    padding: 8px;
+  }
+  .portfolio .portfolio-item .portfolio-info {
+    left: 12px; right: 12px; padding: 10px;
+  }
+  .portfolio .portfolio-filters li { font-size: 12px; margin: 0 6px; }
+
+  /* FAQ */
+  .faq .content h3 { font-size: 24px; }
+  .faq .faq-container .faq-item { padding: 16px; }
+  .faq .faq-container .faq-item h3 { font-size: 16px; }
+
+  /* Testimonials */
+  .testimonials { padding: 48px 0; }
+  .testimonials .testimonial-item { padding: 20px; }
+  .testimonials .testimonial-item h3 { font-size: 16px; }
+  .testimonials .testimonial-item h4 { font-size: 12px; }
+  .testimonials .testimonial-item p  { font-size: 14px; }
+
+  /* Contact (landing_page form) */
+  .landing_page .content-box { padding: 10px 0; }
+  .landing_page .section-head { font-size: 26px; }
+  .landing_page .section-subhead { font-size: 15px; }
+  .landing_page .form-box { padding: 22px; border-radius: 14px; }
+  .landing_page .input, .landing_page .textinput { font-size: 15px; }
+
+  /* Footer */
+  #footer .copyright p,
+  #footer .credits { font-size: 12px; }
+}
+
+/* 5) Medium devices (tablets): scale sensibly */
+@media (min-width: 577px) and (max-width: 991px) {
+  .hero { min-height: 72vh; }
+  .hero h2 { font-size: 40px; }
+  .hero p  { font-size: 22px; }
+
+  .portfolio .isotope-container .col-lg-4,
+  .portfolio .isotope-container .col-md-6 {
+    width: 33.3333%;
+    padding: 10px;
+  }
+}
+
+/* 6) Ensure no element sets a global transform/scale that shrinks the page */
+body, main, .main {
+  transform: none !important;
+  zoom: 1 !important;             /* guard against accidental zoom hacks */
+}
+
+/* 7) Dark gradient site background, but keep cards readable */
+:root {
+  --site-bg-from: #0b1220;
+  --site-bg-to:   #121826;
+}
+html, body {
+  background: linear-gradient(180deg, var(--site-bg-from), var(--site-bg-to));
+}
+section .container,
+.section .container {
+  background: var(--surface-color);        /* your cards/panels stay light/dark as defined */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+/* Reduce container styling for sections that already handle their own backgrounds (hero, testimonials, contact landing_page) */
+.hero .container,
+.testimonials .container,
+.landing_page .responsive-container-block.container {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  border-radius: 0;
+}
