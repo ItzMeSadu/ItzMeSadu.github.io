@@ -801,13 +801,13 @@ section,
 }
 
 .about-info strong {
-  font-size: 20px;
-  font-weight: normal !important;
+  font-size: 18px;
+  font-weight: bold !important;
 }
 
 .about-info span {
-  font-size: 22px;
-  font-weight: normal !important;
+  font-size: 18px;
+  font-weight: bold !important;
 }
 
 .about-name {
@@ -816,7 +816,7 @@ section,
 }
 
 .about-profile {
-  font-size: 18px;
+  font-size: 18px ;
   font-weight: normal !important;
 }
 
