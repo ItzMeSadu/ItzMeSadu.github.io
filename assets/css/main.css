@@ -802,7 +802,7 @@ section,
 
 .about-info strong {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .about-info span {
@@ -812,17 +812,17 @@ section,
 
 .about-name {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .about-profile {
   font-size: 18px;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .about-contact {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 13px;
+  font-weight: normal;
 }
 
 /*--------------------------------------------------------------
