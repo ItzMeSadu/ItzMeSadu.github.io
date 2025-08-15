@@ -796,6 +796,34 @@ section,
 .about .about-me p {
   font-size: 18px;
 }
+.about-info p {
+  margin-bottom: 12px;
+}
+
+.about-info strong {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.about-info span {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.about-name {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.about-profile {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.about-contact {
+  font-size: 20px;
+  font-weight: bold;
+}
 
 /*--------------------------------------------------------------
 # Resume Section
