@@ -419,14 +419,11 @@ section, .section {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-/* ===== Hero Section (fullscreen + safe on mobile) ===== */
 .hero {
   width: 100%;
-  /* visible viewport units first (mobile safe), then fallbacks */
-  min-height: 100svh;
-  min-height: 100dvh;
-  min-height: 100vh;
-  position: relative;
+  min-height: 100svh;  /* visible screen height on mobile */
+  min-height: 100dvh;  /* desktop fallback */
+  min-height: 100vh;   /* standard fallback */
   padding: 0;
   display: flex;
   align-items: center;
@@ -434,33 +431,20 @@ section, .section {
 }
 
 .hero img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* cover entire viewport */
-  z-index: 1;
+  position: absolute; inset: 0; display: block;
+  width: 100%; height: 100%; object-fit: cover; z-index: 1;
 }
-
 .hero:before {
-  content: "";
-  /* keep the overlay subtle so it doesn't darken everything */
-  background: rgba(0,0,0,0.25);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+  content: ""; background: color-mix(in srgb, var(--background-color), transparent 30%);
+  position: absolute; inset: 0; z-index: 2;
 }
-
 .hero .container { position: relative; z-index: 3; }
-
 .hero h2 { margin: 0; font-size: 64px; font-weight: 700; }
-.hero p  { margin: 5px 0 0 0; font-size: 36px; font-weight: 600; }
+.hero p { margin: 5px 0 0 0; font-size: 36px; font-weight: 600; }
 .hero p span { letter-spacing: 1px; }
-
 @media (max-width: 768px) {
   .hero h2 { font-size: 32px; }
-  .hero p  { font-size: 20px; }
+  .hero p { font-size: 20px; }
 }
 
 /*--------------------------------------------------------------
@@ -1488,33 +1472,3 @@ section .container,
   padding: 0;
   border-radius: 0;
 }
-
-
--------------------------
-/* ===== Hotfix: don't let the page-wide gradient darken everything ===== */
-
-/* If you have a body::before gradient layer, disable it for now */
-body::before { display: none !important; }
-
-/* Restore section backgrounds so content isn’t transparent */
-section, .section { 
-  background-color: var(--background-color) !important;
-}
-
-/* Restore boxed card backgrounds/shadows for readability */
-section .container,
-.resume .resume-item,
-.services .service-item,
-.faq .faq-container .faq-item,
-.testimonials .testimonial-item {
-  background: var(--surface-color) !important;
-  box-shadow: 0 10px 24px rgba(0,0,0,.06) !important;
-}
-
-/* Keep portfolio images crisp */
-.portfolio .portfolio-item img,
-img.img-fluid {
-  opacity: 1 !important;
-  filter: none !important;
-}
-
